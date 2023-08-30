@@ -8,9 +8,9 @@ def randomize_in_place(A):
 
         # Print the program state state before swapping
         print('Before Swap:')
-        print('   {A}')
-        print('   i = {i+1}')
-        print('   Random({i+1}, {n+1}) = {random_index + 1}')
+        print(f'   {A}')
+        print(f'   i = {i+1}')
+        print(f'   Random({i+1}, {n+1}) = {random_index + 1}')
         print("")
 
         # Swap the number at index i and the number at the random index
@@ -18,15 +18,15 @@ def randomize_in_place(A):
 
         # Print the program state after swapping
         print('After Swap:')
-        print('   {A}')
-        print('   i = {i + 1}')
+        print(f'   {A}')
+        print(f'   i = {i + 1}')
         print('-' * 35) 
     return A
 
 sample_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 random_array = randomize_in_place(sample_array)
 print('Final Array:')
-print('   {random_array}')
+print(f'   {random_array}')
 
 
 
