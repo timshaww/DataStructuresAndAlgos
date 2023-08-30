@@ -28,5 +28,22 @@ random_array = randomize_in_place(sample_array)
 print('Final Array:')
 print(f'   {random_array}')
 
+''' 
+I want to make print look like this:
+Index is represented by ^
+Random destination is represented by *
 
+Before Swap:
+   Index = 1
+   Random(1, 10) = 5
+   [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    ^-----------^
+                
 
+After Swap:
+   [5, 2, 3, 4, 1, 6, 7, 8, 9, 10]
+    ^-----------^
+
+    Index = 2
+
+'''
