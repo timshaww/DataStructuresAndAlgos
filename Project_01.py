@@ -30,8 +30,6 @@ print(f'   {random_array}')
 
 ''' 
 I want to make print look like this:
-Index is represented by ^
-Random destination is represented by *
 
 Before Swap:
    Index = 1
