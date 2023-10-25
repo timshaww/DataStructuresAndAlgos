@@ -14,3 +14,36 @@ new key, and each collision that occurs). The program state in this case should 
 the array of numbers and the probe number “i”
 
 '''
+class DoubleHashing:
+    def __init__(self):
+        self.table_size = 16
+        self.array = [None] * self.table_size
+
+    def h1(self, key):
+        return key % 16
+
+    def h2(self, key):
+        return 2 * (key % 4) + 1
+
+    def insert(self, key):
+        index = self.h1(key)
+        if not self.array[index]:
+            self.array[index] = key
+            print(f"Inserting key {key} at index {index}.\nArray: {self.array}. \n\n")
+            return
+        
+        i = 1
+        while i < self.table_size:
+            next_index = (index + i * self.h2(key)) % 16
+            if not self.array[next_index]:
+                self.array[next_index] = key
+                print(f"Inserting key {key} at index {next_index}.")
+                print(f"There were collisions!!! Total number of collisions: {i}\nArray: {self.array}.\n\n")
+                return
+            i += 1
+
+hash_table = DoubleHashing()
+keys = [10, 26, 18, 34, 22, 14, 42, 50, 27, 13, 9, 21, 6, 19, 48, 31]
+print(f"\nKeys: {keys}\n\n")
+for key in keys:
+    hash_table.insert(key)
